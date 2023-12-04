@@ -26,11 +26,11 @@ struct TabController: View {
     }
     
     // Used to store app data
-    @State var partyData = PartyData()
+    @ObservedObject var partyData = PartyData()
     
     var body: some View {
         TabView {
-            PartyListView(partyData: $partyData)
+            PartyListView(partyData: partyData)
                 .tabItem { Label("Parties", systemImage: "party.popper.fill") }
         }
     }
